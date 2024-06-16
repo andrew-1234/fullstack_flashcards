@@ -1,14 +1,15 @@
 # dependencies
-/node_modules
-/flashcard-backend/node_modules
-/.pnp
+node_modules/
+flashcard-backend/node_modules/
+.pnp
 .pnp.js
 
 # testing
-/coverage
+coverage/
 
 # production
-/build
+dist/
+build/
 
 # misc
 .DS_Store
