@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FlashcardForm from './components/FlashcardForm';
 import FlashcardList from './components/FlashcardList';
+import { Container, Typography, Box } from '@mui/material';
 
 const App: React.FC = () => {
   const [flashcards, setFlashcards] = useState<{ question: string, answer: string }[]>([]);
@@ -29,11 +30,15 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Flashcard Maker/Reviewer</h1>
-      <FlashcardForm addFlashcard={addFlashcard} />
-      <FlashcardList flashcards={flashcards} />
-    </div>
+    <Container>
+      <Box my={4}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Flashcard Maker/Reviewer
+        </Typography>
+        <FlashcardForm addFlashcard={addFlashcard} />
+        <FlashcardList flashcards={flashcards} />
+      </Box>
+    </Container>
   );
 };
 

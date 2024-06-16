@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TextField, Button, Box } from '@mui/material';
 
 type FlashcardFormProps = {
   addFlashcard: (flashcard: { question: string, answer: string }) => void;
@@ -17,23 +18,25 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
+    <Box component="form" onSubmit={handleSubmit} mb={3}>
+      <TextField
+        label="Question"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
-        placeholder="Question"
-        required
+        fullWidth
+        margin="normal"
       />
-      <input
-        type="text"
+      <TextField
+        label="Answer"
         value={answer}
         onChange={(e) => setAnswer(e.target.value)}
-        placeholder="Answer"
-        required
+        fullWidth
+        margin="normal"
       />
-      <button type="submit">Add Flashcard</button>
-    </form>
+      <Button type="submit" variant="contained" color="primary">
+        Add Flashcard
+      </Button>
+    </Box>
   );
 };
 
